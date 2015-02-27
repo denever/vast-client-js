@@ -47,6 +47,8 @@ class VASTParser
 
             response = new VASTResponse()
 
+            response.docxml = xml
+
             unless xml?.documentElement? and xml.documentElement.nodeName is "VAST"
                 return cb()
 
@@ -296,4 +298,3 @@ class VASTParser
         return node and (node.textContent or node.text)
 
 module.exports = VASTParser
-
