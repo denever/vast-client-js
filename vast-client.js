@@ -593,6 +593,7 @@ VASTParser = (function() {
           return cb(err);
         }
         response = new VASTResponse();
+        response.docxml = xml;
         if (!(((xml != null ? xml.documentElement : void 0) != null) && xml.documentElement.nodeName === "VAST")) {
           return cb();
         }
@@ -970,6 +971,7 @@ VASTResponse = (function() {
   function VASTResponse() {
     this.ads = [];
     this.errorURLTemplates = [];
+    this.docxml = "";
   }
 
   return VASTResponse;
